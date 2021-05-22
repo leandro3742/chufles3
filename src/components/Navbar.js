@@ -5,12 +5,16 @@ import './styles/Navbar.css';
 
 function Navbar() {
     const [margenIzq, setMargenIzq] = useState("");
+    const [padding, setPadding] = useState("");
+
     useEffect(() => {
         if(window.screen.width < 780){
             setMargenIzq('0px');
+            setPadding("p-1");
         }
         else{
             setMargenIzq('650px');
+            setPadding("p-3");
         }
     }, []);
 
@@ -26,17 +30,13 @@ function Navbar() {
         paddingBottom: "15px",
         marginLeft: margenIzq,
     };
-    
+
     return (
-        <nav style={styleNavbar} className="bg-dark shadow-lg p-3 mb-5 navbar navbar-expand-lg navbar-light fixed-top">
-            <div className="row">
-                <Link className="col-9 py-3" to="/"><img style={{ width:'200px'}} src={logo} /></Link>
-                <div className="d-flex align-items-center">
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </div>
+        <nav style={styleNavbar} className={"bg-dark shadow-lg mb-5 navbar navbar-expand-lg navbar-light fixed-top" + padding}>
+            <Link className="col-9 py-3" to="/"><img style={{ width:'200px'}} src={logo} /></Link>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
             <div style={style} className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
