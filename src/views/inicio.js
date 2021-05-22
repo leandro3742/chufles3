@@ -70,7 +70,7 @@ function Inicio() {
             <span style={styleTittle}>Nuestras medidas de seguridad de covid-19</span>          
           </div>
           
-          <div style={{height: containerResponsive, backgroundColor: '#C2C2C2'}} className="shadow p-3 rounded">
+          <div style={{backgroundColor: '#C2C2C2'}} className="shadow p-3 rounded">
             <div className="row">
               <div className="col-lg-4 col-12 d-flex justify-content-center align-items-center">
               <img src={logo} style={{height: tamanoImg}} className="rounded shadow-lg"/>
@@ -81,7 +81,7 @@ function Inicio() {
             </div>
           </div>
           
-          <div style={{height: containerResponsive, backgroundColor: '#FCAAAA'}} className="shadow p-3 rounded my-2">
+          <div style={{backgroundColor: '#FCAAAA'}} className="shadow p-3 rounded my-2">
             <div className="row">
               <div className="col-lg-8 col-12 d-flex justify-content-center align-items-center">
                 <span style={styleText}>Desinfección del vehículo antes y después de cada clase</span>          
@@ -92,7 +92,7 @@ function Inicio() {
             </div>
           </div>
 
-          <div style={{height: containerResponsive, backgroundColor: '#C2C2C2'}} className="shadow p-3 rounded">
+          <div style={{backgroundColor: '#C2C2C2'}} className="shadow p-3 rounded">
             <div className="row">
               <div className="col-lg-4 col-12 d-flex justify-content-center align-items-center">
                 <img src={logo3} style={{height: tamanoImg}} className="rounded shadow-lg"/>
