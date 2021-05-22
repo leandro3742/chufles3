@@ -13,8 +13,8 @@ function Inicio() {
   const [marginBottom, setMarginBottom] = useState("");
   useEffect(() => {
     if(window.screen.width < 780){
-      setTamanoTitulo("24px");
-      setTamanoTexto("18px");
+      setTamanoTitulo("32px");
+      setTamanoTexto("24px");
       setTamanoSubTexto("15px");
       setContainerResponsive("200px");
       setTamanoImg("100px");
