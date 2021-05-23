@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Layout from './components/layout';
 import Inicio from './views/inicio';
-// import Nosotros from './pages/Nosotros';
+import QuienesSomos from './views/quienesSomos';
 // import MaterialTeorico from "./pages/MaterialTeorico"; 
 // import Requisitos from "./pages/Requisitos";
 // import Examen from "./pages/Examen";
@@ -16,6 +16,7 @@ function App() {
         <Layout>
           <Switch>
             <Route path="/" exact component={Inicio} />
+            <Route path="/Quienes_somos" exact component={QuienesSomos} />
             {/* <Route path="/materialTeorico" exact component={MaterialTeorico} /> */}
             {/* <Route path="/requisitos" exact component={Requisitos} /> */}
             {/* <Route path="/examen" exact component={Examen} /> */}

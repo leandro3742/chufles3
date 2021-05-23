@@ -8,7 +8,7 @@ function Layout(props) {
   return (
     <div>
       <NavBar />
-      <div style={{marginTop: '25px'}}>
+      <div>
         {props.children}
       </div>
       <Footer />

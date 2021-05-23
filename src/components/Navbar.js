@@ -9,32 +9,34 @@ import './styles/Navbar.css';
 function Navbar() {
     const [padding, setPadding] = useState("");
     const [alinear, setAlinear] = useState("");
-
+    const [margenBottom, setMargenBottom] = useState("");
     useEffect(() => {
         if(window.screen.width < 780){
             setPadding("p-1");
             setAlinear("justify-content-center");
+            setMargenBottom("5px");
         }
         else{
             setPadding("p-3");
             setAlinear("justify-content-start");
+            setMargenBottom("15px");
         }
     }, []);
 
     const styleNavbar = {
         margin: "0",
-        // background: "linear-gradient(to bottom, #2471A3,#69B8EB)",
+        marginBottom: margenBottom,
         minHeight: '100px',
         fontSize: "21px",
         borderRadius: '0 0 5px 5px'
     };
     const style = {
-        marginTop: '15px',
+        marginTop: "15px",
         paddingBottom: "15px",
     };
 
     return (
-        <nav style={styleNavbar} className={"bg-dark shadow-lg mb-5 navbar navbar-expand-lg navbar-light fixed-top" + padding}>
+        <nav style={styleNavbar} className={"bg-dark shadow-lg navbar navbar-expand-lg navbar-light fixed-top" + padding}>
             <Link className={"col-lg-8 col-12 my-3 d-flex "+ alinear} to="/"><img className="my-2" style={{width: '250px'}} src={logo} /></Link>
             <button style={{margin: "auto"}} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
