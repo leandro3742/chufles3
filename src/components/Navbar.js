@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import logo from '../img/logo_chufles3.svg';
+// import logo from '../img/logo_chufles3.svg';
+import logo from '../img/logoChufles.svg';
 import './styles/Navbar.css';
 
 function Navbar() {

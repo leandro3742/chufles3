@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="62" viewBox="0 0 200 62">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff0004;
+        font-size: 32px;
+        font-family: BodoniMT-BoldItalic, Bodoni MT;
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      .cls-2 {
+        fill: #ed3237;
+        font-size: 30px;
+        font-family: '\31 8thCentury';
+      }
+    </style>
+  </defs>
+  <g id="Layer_x0020_1" transform="translate(-0.09 2.58)">
+    <text id="Chufle_s" data-name="Chufle’s" class="cls-1" transform="translate(100.09 50.42)"><tspan x="-61.352" y="0">Chufle’s</tspan></text>
+    <text id="Escuela_de_choferes" data-name="Escuela de choferes" class="cls-2" transform="translate(100.09 14.42)"><tspan x="-99.551" y="0">Escuela de choferes</tspan></text>
+  </g>
+</svg>
