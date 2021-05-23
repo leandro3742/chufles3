@@ -33,7 +33,7 @@ function Navbar() {
 
     return (
         <nav style={styleNavbar} className={"bg-dark shadow-lg mb-5 navbar navbar-expand-lg navbar-light fixed-top" + padding}>
-            <Link className="col-8 py-3" to="/"><img style={{ width:'200px'}} src={logo} /></Link>
+            <Link className="col-8 py-3" to="/"><img src={logo} /></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
