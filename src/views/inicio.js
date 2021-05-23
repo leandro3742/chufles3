@@ -33,7 +33,6 @@ function Inicio() {
 // Styles //
   const covid = {
     backgroundColor: '#FCAAAA',
-    marginTop: '50px',
     padding: '25px',
     fontSize: '25px'
   }

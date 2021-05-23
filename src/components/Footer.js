@@ -38,9 +38,9 @@ const Footer = () => {
         <div>
             <div className="row m-0 p-0 shadow mt-5 pt-5 pb-1 bg-dark rounded" >
                 <div className="col-12 col-lg-5">
-                    <div className="d-flex justify-content-center align-items-center">
+                    <div className="d-flex">
                         <img src={phone} style={{height: tamanoIcon}} />
-                        <div className="d-flex flex-column ml-5">
+                        <div className="d-flex flex-column ml-3">
                             <span style={styleText}>Telefono: 098361013</span>
                             <span style={styleText}>Cel: 098361013</span>
                         </div>
@@ -51,9 +51,9 @@ const Footer = () => {
                     <div style={{width: ancho, height: alto, marginTop: margenTop, marginLeft: margenLeft ,backgroundColor: 'white'}}></div>
                 </div>
                 <div className="col-12 col-lg-5">
-                    <div className="d-flex justify-content-center align-items-center">
+                    <div className="d-flex justify-content-center ml-3 align-items-center">
                         <img src={maps} style={{height: tamanoIcon}} />
-                        <div className="d-flex flex-column ml-5 text-center">
+                        <div className="d-flex flex-column ml-3 text-center">
                             <span style={styleText} >José Batlle y Ordóñez, Canelones,</span>
                             <span style={styleText} >Departamento de Canelones</span>
                         </div>
