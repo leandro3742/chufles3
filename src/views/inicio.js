@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import logo from '../img/grande(1).jpg';
 import logo2 from '../img/grande(2).jpg';
 import logo3 from '../img/grande(4).jpg';
+import Carrousel from '../components/Carrousel';
 
 function Inicio() {
   const [tamanoTitulo, setTamanoTitulo] = useState('');
@@ -62,6 +63,10 @@ function Inicio() {
 
   return (
     <div>
+      <div className="mb-5">
+      <Carrousel />
+      </div>
+      
       <div className="d-flex justify-content-center">
         <div className="col-12 col-lg-10">
 

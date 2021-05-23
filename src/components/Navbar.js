@@ -47,7 +47,7 @@ function Navbar() {
                         <NavLink className="nav-link" exact to="/">Inicio</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/Quienes_somos">¿Quienes somos?</NavLink>
+                        <NavLink className="nav-link" to="/Quienes_somos">¿Quiénes somos?</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/Contacto">Contacto</NavLink>
