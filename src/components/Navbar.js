@@ -5,17 +5,17 @@ import logo from '../img/logoChufles.svg';
 import './styles/Navbar.css';
 
 function Navbar() {
-    const [margenIzq, setMargenIzq] = useState("");
     const [padding, setPadding] = useState("");
+    const [alinear, setAlinear] = useState("");
 
     useEffect(() => {
         if(window.screen.width < 780){
-            setMargenIzq('0px');
             setPadding("p-1");
+            setAlinear("justify-content-center");
         }
         else{
-            setMargenIzq('650px');
             setPadding("p-3");
+            setAlinear("justify-content-start");
         }
     }, []);
 
@@ -33,7 +33,7 @@ function Navbar() {
 
     return (
         <nav style={styleNavbar} className={"bg-dark shadow-lg mb-5 navbar navbar-expand-lg navbar-light fixed-top" + padding}>
-            <Link className="col-lg-8 py-3" to="/"><img src={logo} /></Link>
+            <Link className={"col-lg-8 col-12 my-3 d-flex "+ alinear} to="/"><img className="my-2" src={logo} /></Link>
             <button style={{margin: "auto"}} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
