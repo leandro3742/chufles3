@@ -25,7 +25,8 @@ function Navbar() {
 
     const styleNavbar = {
         margin: "0",
-        marginBottom: margenBottom,
+        marginBottom: "0",
+        // marginBottom: margenBottom,
         minHeight: '100px',
         fontSize: "21px",
         borderRadius: '0 0 5px 5px'
@@ -50,7 +51,7 @@ function Navbar() {
                         <NavLink className="nav-link" to="/Quienes_somos">¿Quiénes somos?</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/Contacto">Contacto</NavLink>
+                        <NavLink className="nav-link" to="/Contactanos">Contáctanos</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/Examen">Examen</NavLink>

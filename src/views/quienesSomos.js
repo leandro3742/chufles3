@@ -5,26 +5,16 @@ import Carrousel from '../components/Carrousel';
 export default function QuienesSomos() {
   const [tamanoTitulo, setTamanoTitulo] = useState('');
   const [tamanoTexto, setTamanoTexto] = useState('');
-  const [tamanoSubTexto, setTamanoSubTexto] = useState('');
-  const [containerResponsive, setContainerResponsive] = useState("");
-  const [tamanoImg, setTamanoImg] = useState("");
-  const [marginBottom, setMarginBottom] = useState("");
+  
   useEffect(() => {
     if(window.screen.width < 780){
       setTamanoTitulo("32px");
       setTamanoTexto("24px");
-      setTamanoSubTexto("15px");
-      setContainerResponsive("200px");
-      setTamanoImg("100px");
-      setMarginBottom("mb-2");
+
     }
     else{
       setTamanoTitulo("52px");
       setTamanoTexto("29px");
-      setTamanoSubTexto("18px");
-      setContainerResponsive("175px");
-      setTamanoImg("150px");
-      setMarginBottom("mb-5");
     }
   }, []);
 
