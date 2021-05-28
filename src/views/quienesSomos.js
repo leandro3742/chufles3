@@ -33,7 +33,7 @@ export default function QuienesSomos() {
   
   return (
     <div>
-      <div className="mb-2">
+      <div className="mb-2 mt-1">
         <Carrousel />
       </div>
       

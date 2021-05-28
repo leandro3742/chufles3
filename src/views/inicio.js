@@ -63,11 +63,11 @@ function Inicio() {
 
   return (
     <div>
-      <div className="mb-5">
+      {/* <div className="mb-5">
       <Carrousel />
-      </div>
+      </div> */}
       
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center mt-5">
         <div className="col-12 col-lg-10">
 
           <div style={covid} className={"d-flex justify-content-center shadow p-3 rounded text-center "+ marginBottom}>

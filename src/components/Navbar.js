@@ -29,7 +29,7 @@ function Navbar() {
         // marginBottom: margenBottom,
         minHeight: '100px',
         fontSize: "21px",
-        borderRadius: '0 0 5px 5px'
+        // borderRadius: '0 0 5px 5px'
     };
     const style = {
         marginTop: "15px",
