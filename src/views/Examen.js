@@ -88,14 +88,14 @@ const Examen = () => {
         comprobar(e.target.ci.value);
     }    
     return (
-        <div style={{minHeight: "250px"}}>
-        <div className="row d-flex flex-column align-items-center mt-5">
-            <h2 style={styleTittle}>Ingrese su usuario</h2>
-            <form onSubmit={verify} className="col-12 d-flex flex-column align-items-center" >
-                <input type="number" class="form-control col-10 col-lg-3" id="ci" />
-                <button className="btn btn-primary mt-3">Ingresar</button>
-            </form>
-        </div>
+        <div style={{minHeight: "250px"}} >
+            <div className="row d-flex flex-column align-items-center mt-5 mx-0">
+                <h2 style={styleTittle}>Ingrese su usuario</h2>
+                <form onSubmit={verify} className="col-12 d-flex flex-column align-items-center" >
+                    <input type="number" class="form-control col-10 col-lg-3" id="ci" />
+                    <button className="btn btn-primary mt-3">Ingresar</button>
+                </form>
+            </div>
         </div>
     )
 }
