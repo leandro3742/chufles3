@@ -90,16 +90,39 @@ const Examen = () => {
     }    
     return (
         <div style={{minHeight: "250px"}} >
-            <div className={mostrarLogin}>
-                <div className="row d-flex flex-column align-items-center mt-5 mx-0">
-                    <h2 style={styleTittle}>Ingrese su usuario</h2>
-                    <form onSubmit={verify} className="col-12 d-flex flex-column align-items-center" >
-                        <input type="number" class="form-control col-10 col-lg-3" id="ci" />
-                        <button className="btn btn-primary mt-3">Ingresar</button>
-                    </form>
+            <div className={mostrarLogin}>   
+                <div className="container cuerpoInicio d-flex justify-content-center align-items-center mt-n4">
+                    <div className="mt-5 container bg-white rounded cardInicio card shadow" style={{ width: "350px" }}>
+                        <h3 className="text-center mt-4 mb-3">Iniciar sesión</h3>
+                        
+                        <form onSubmit={verify}>
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    className="form-control mt-4"
+                                    id="nombre"
+                                    aria-describedby="emailHelp"
+                                    placeholder="Ingrese su nombre"
+                                />
+                            </div>
+                            <div className="form-group">
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    id="ci"
+                                    placeholder="Ingresa su cedula"
+                                />
+                            </div>
+                            <div className="d-flex justify-content-center py-3">
+                                <button type="submit" style={{margin: "auto"}} className="btn btn-primary botonVerdeInicio">
+                                    Ingresar
+                                </button>
+                            </div>
+                        </form>
+                        
+                    </div>
                 </div>
             </div>
-
             <div className={mostrarPreguntas}>
                 <Preguntas />
             </div>
