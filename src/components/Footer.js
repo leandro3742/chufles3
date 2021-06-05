@@ -41,8 +41,8 @@ const Footer = () => {
                     <div className="d-flex align-items-center">
                         <img src={phone} style={{height: tamanoIcon}} />
                         <div className="d-flex flex-column ml-3">
-                            <span style={styleText}>Telefono: 098361013</span>
-                            <span style={styleText}>Cel: 098361013</span>
+                            <span style={styleText}>Telefono: 4332 0505</span>
+                            <span style={styleText}>Cel: 099402315</span>
                         </div>
                     </div>
 

@@ -22,6 +22,13 @@ function felicitaciones(){
     })
 }
 
+function perdio(){
+    Swal.fire({
+        title: "Ops...",
+        text: "no llegaste al minimo necesario para salvar el simulacro",
+        padding: '3em',
+    })
+}
 function respuesta_mal(respuestas_correctas){
     Swal.fire({
         title : "Ops.. La respuesta correcta es: " ,
@@ -58,7 +65,7 @@ function Preguntas(){
     const indice = myArray;
     const [i, setI] = useState(0);
     const [mostrarRespuestas, setMostrarRespuestas] = useState(respuestas[indice[0]]);
-
+    
     const verificar = (resp) => {
         if(maximoPreguntas > 0){
             if(resp === respuestas_correctas[i]){
@@ -74,11 +81,11 @@ function Preguntas(){
             maximoPreguntas--;
         }
         else{
-            if(resCorrectas >= 2){
+            if(resCorrectas >= 27){
                 felicitaciones();                
             }
             else{
-                alert("perdiste, sos malisimo");
+                perdio();
             }
         }
     };
@@ -93,14 +100,14 @@ function Preguntas(){
                     <div style={{margin: "auto"}} className="d-flex justify-content-center col-12">
                         <div className="d-flex flex-column align-items-center">
                             {mostrarRespuestas.map((elem, iterador)=>{ return( 
-                                <button key={iterador} onClick={()=>verificar(elem)} className="col-12 btn btn-primary m-1 border">{elem}</button>
+                                <button key={iterador} onClick={()=>verificar(elem)} className="col-12 btn btn-primary m-1 border shadow-sm">{elem}</button>
                             )})}
                         </div>
                     </div>
                 </div>
                 <span style={styleTittle}>{i+1}/30</span>
             </div>
-            <button onClick={()=>felicitaciones()}>Probar</button>
+            <button onClick={()=>perdio()}>Probar</button>
         </div>
     )
 }

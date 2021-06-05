@@ -44,16 +44,16 @@ function Navbar() {
             </button>
             <div style={style} className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
-                    <li className="nav-item">
+                    <li style={{margin: "auto"}} className="nav-item">
                         <NavLink className="nav-link" exact to="/">Inicio</NavLink>
                     </li>
-                    <li className="nav-item">
+                    <li style={{margin: "auto"}} className="nav-item">
                         <NavLink className="nav-link" to="/Quienes_somos">¿Quiénes somos?</NavLink>
                     </li>
-                    <li className="nav-item">
+                    <li style={{margin: "auto"}} className="nav-item">
                         <NavLink className="nav-link" to="/Contactanos">Contáctanos</NavLink>
                     </li>
-                    <li className="nav-item">
+                    <li style={{margin: "auto"}} className="nav-item">
                         <NavLink className="nav-link" to="/Examen">Examen</NavLink>
                     </li>
                 </ul>
