@@ -91,11 +91,11 @@ function Preguntas(){
     return(
         <div>
             <div className="d-flex flex-column align-items-center">
-                <div style={{margin: "auto", width: "80%"}} className="d-flex justify-content-center">
-                    <span className="pregunta " style={styleTittle}>{preguntas[myArray[i]]}</span>
+                <div style={{margin: "auto" }} className="d-flex justify-content-center">
+                    <span className="pregunta text-center" style={styleTittle}>{preguntas[myArray[i]]}</span>
                 </div>
                 <div className="row p-0 m-0">
-                    <div style={{margin: "auto"}} className="d-flex justify-content-center col-12">
+                    <div style={{margin: "auto", width: "100%"}} className="d-flex justify-content-center col-12">
                         <div className="d-flex flex-column align-items-center">
                             {mostrarRespuestas.map((elem, iterador)=>{ return( 
                                 <button key={iterador} onClick={()=>verificar(elem)} className="col-12 btn btn-primary m-1 border shadow-sm">{elem}</button>
