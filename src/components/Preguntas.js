@@ -1,48 +1,65 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import Swal from 'sweetalert2';
 import { myArray, preguntas, respuestas, respuestas_correctas } from './datos.js';
 import gif from '../img/bob-12.gif';
-
-function correcto(){
-    Swal.fire({
-        title : "Correcto!!!" ,
-        buttons: "siguiente",
-        icon : "success"
-    }) 
-}
-
-function felicitaciones(){
-    Swal.fire({
-        title: `!!Felicitaciones!!
-                Aprovaste el simulacro`,
-        padding: '3em',
-        background: `
-            url(${gif})  
-        `
-    })
-}
-
-function perdio(){
-    Swal.fire({
-        title: "Ops...",
-        text: "no llegaste al minimo necesario para salvar el simulacro",
-        padding: '3em',
-    })
-}
-function respuesta_mal(respuestas_correctas){
-    Swal.fire({
-        title : "Ops.. La respuesta correcta es: " ,
-        text : respuestas_correctas,
-        buttons: "Siguiente",
-        icon : "error"
-    }) 
-}
 
 var resCorrectas = 0;
 var maximoPreguntas = 29;
 
 function Preguntas(){
-    // // //
+    var history = useHistory();
+
+// // // Funciones para el SweetAlert // // //
+    const correcto = () => {
+        Swal.fire({
+            title : "Correcto!!!" ,
+            buttons: "siguiente",
+            icon : "success"
+        }) 
+    }
+    const respuesta_mal = (respuestas_correctas) => {
+        Swal.fire({
+            title : "Ops.. La respuesta correcta es: " ,
+            text : respuestas_correctas,
+            buttons: "Siguiente",
+            icon : "error"
+        }) 
+    }    
+    const felicitaciones = () => {
+        Swal.fire({
+            icon: "success",            
+            title: `!!Felicitaciones!!
+                    Aprovaste el simulacro`,
+            text: 'Volver a intentarlo?',
+            button: "success",
+            padding: '3em',
+            // background: `
+            //     url(${gif})  
+            // `
+        }).then((result)=>{
+            history.replace('/');
+        })
+    }
+    const perdio = () =>{
+        Swal.fire({
+            icon: "error",
+            title: "Ops...",
+            text: "no llegaste al minimo necesario para salvar el simulacro",
+            showConfirmButton: true,
+            showCancelButton: true,
+            confirmButtonText: `volver a intentar`,
+            cancelButtonText: `Cancelar`,
+        }).then((result)=>{
+            if(result.isConfirmed){
+                window.location = '/examen';
+            }
+            else if (result.isDismissed){
+                history.replace('/');
+            }
+        })
+    }
+// // // // // // // // // //
     const [tamanoTitulo, setTamanoTitulo] = useState('');
     
     useEffect(() => {
@@ -106,6 +123,7 @@ function Preguntas(){
                 <span style={styleTittle}>{i+1}/30</span>
             </div>
             <button onClick={()=>perdio()}>Probar</button>
+            <button onClick={()=>felicitaciones()}>Feliciar</button>
         </div>
     )
 }
