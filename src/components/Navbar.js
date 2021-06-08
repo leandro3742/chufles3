@@ -35,14 +35,13 @@ function Navbar() {
         marginTop: "15px",
         paddingBottom: "15px",
     };
-
     return (
         <nav style={styleNavbar} className={"bg-dark shadow-lg navbar navbar-expand-lg navbar-light fixed-top" + padding}>
             <Link className={"col-lg-8 col-12 my-3 d-flex "+ alinear} to="/"><img className="my-2" style={{width: '250px'}} src={logo} /></Link>
             <button style={{margin: "auto"}} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div style={style} className="collapse navbar-collapse" id="navbarNav">
+            <div style={style} className="collapse navbar-collapse show" id="navbarNav">
                 <ul className="navbar-nav">
                     <li style={{margin: "auto"}} className="nav-item">
                         <NavLink className="nav-link" exact to="/">Inicio</NavLink>
