@@ -380,35 +380,67 @@ export const respuestas = [
     ["realizarla rápidamente , tomando recaudos de seguridad pertinente y haciendo uso de los espejos retrovisores del vehículo", "señalizarla, utilizando las señales acústicas de su vehículo , incluso en ciudad, para advertir de ella a los demás usuarios", "no, recorrer hacia atrás más de quince metros ni invadir el cruce de vías"] ,
 ];
     
-var indice_aleatorio = Math.floor(Math.random()*preguntas.length);
-    const cantidad_de_preguntas = 31;
-    var my_Array = [];
-    var respuestas_bien = [];
-    respuestas_bien.length = cantidad_de_preguntas;
-    my_Array.length = cantidad_de_preguntas;
-    var numeros_repetidos = [];
-    var i = 0;
-    var j = 0;
-    while(i < my_Array.length){
-        indice_aleatorio = Math.floor(Math.random()*preguntas.length);
-        respuestas_bien[i] = respuestas[indice_aleatorio][0];
-        for (j in my_Array){
-            // console.log('Entro?');
-            if (my_Array[j] === indice_aleatorio){
-                numeros_repetidos.push(indice_aleatorio);
-                indice_aleatorio = Math.floor(Math.random()*preguntas.length);
-            }
-            for (j in numeros_repetidos){
-                while (indice_aleatorio === numeros_repetidos[j]){
-                    indice_aleatorio = Math.floor(Math.random()*preguntas.length) ;
-                    j = 0 ;
-                }
-            }
+
+
+let traerPreguntas = (repetidas) => {
+    //Recibe como parametro un arreglo de numeros que ya tenemos, que no podemos volver a repetir
+    let indice_aleatorio = Math.floor(Math.random()*preguntas.length);
+    for(let i=0; i<repetidas.length; i++){
+        if(indice_aleatorio === repetidas[i]){
+            //Aca deno rechazar el numero y volver a probar con otro
+            traerPreguntas(repetidas);  
         }
-        my_Array[i] = indice_aleatorio;
-        numeros_repetidos[i] = indice_aleatorio;
-        i++;
     }
-    export var myArray = my_Array;
-    export var respuestas_correctas = respuestas_bien;
-    // console.log(myArray);
+    return indice_aleatorio;
+}
+
+let arreglo = [];
+let arrRespuestas = [];
+let arrRespuestasCorrectas = [];
+let arrPreguntas = [];
+
+for(let i=0; i<30;i++){ //lleno el arreglo con numeros al azar
+    let numero = traerPreguntas(arreglo);
+    arreglo.push(numero);
+    arrPreguntas.push(preguntas[numero]);
+    arrRespuestas.push(respuestas[numero]);
+    arrRespuestasCorrectas.push(respuestas[numero][0]);
+}
+console.log(arrRespuestas);
+
+export var arrayPreguntas = arrPreguntas;
+export var arrayRespuestas = arrRespuestas;
+export var respuestas_correctas = arrRespuestasCorrectas;
+// var indice_aleatorio = Math.floor(Math.random()*preguntas.length);
+//     const cantidad_de_preguntas = 31;
+//     var my_Array = [];
+//     var respuestas_bien = [];
+//     respuestas_bien.length = cantidad_de_preguntas;
+//     my_Array.length = cantidad_de_preguntas;
+//     var numeros_repetidos = [];
+//     var i = 0;
+//     var j = 0;
+//     for(let i = 0; i<my_Array.length; i++){
+//     // while(i < my_Array.length){
+//         indice_aleatorio = Math.floor(Math.random()*preguntas.length);
+//         respuestas_bien[i] = respuestas[indice_aleatorio][0];
+//         for (let j = 0; j< my_Array; j++){
+//             // console.log('Entro?');
+//             if (my_Array[j] === indice_aleatorio){
+//                 numeros_repetidos.push(indice_aleatorio);
+//                 indice_aleatorio = Math.floor(Math.random()*preguntas.length);
+//             }
+//             for (j in numeros_repetidos){
+//                 while (indice_aleatorio === numeros_repetidos[j]){
+//                     indice_aleatorio = Math.floor(Math.random()*preguntas.length) ;
+//                     j = 0 ;
+//                 }
+//             }
+//         }
+//         my_Array[i] = indice_aleatorio;
+//         numeros_repetidos[i] = indice_aleatorio;
+//         // i++;
+//     }
+//     export var myArray = my_Array;
+//     export var respuestas_correctas = respuestas_bien;
+//     // console.log(myArray);

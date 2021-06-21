@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import Swal from 'sweetalert2';
-import { myArray, preguntas, respuestas, respuestas_correctas } from './datos.js';
-import gif from '../img/bob-12.gif';
+import { arrayPreguntas, arrayRespuestas, respuestas_correctas } from './datos.js';
 
 var resCorrectas = 0;
 var maximoPreguntas = 29;
-
+var i = 0;
 function Preguntas(){
     var history = useHistory();
 
@@ -34,9 +33,6 @@ function Preguntas(){
             text: 'Volver a intentarlo?',
             button: "success",
             padding: '3em',
-            // background: `
-            //     url(${gif})  
-            // `
         }).then((result)=>{
             history.replace('/');
         })
@@ -77,10 +73,17 @@ function Preguntas(){
     };
     // // //
 
-    const indice = myArray;
-    const [i, setI] = useState(0);
-    const [mostrarRespuestas, setMostrarRespuestas] = useState(respuestas[indice[0]]);
-    
+    const [pregunta, setPregunta] = useState(arrayPreguntas[i]);
+    const [respuestas, setRespuestas] = useState(arrayRespuestas[i]);
+
+    const reordenarRespuestas = (array) => {
+        let numero = Math.floor(Math.random()*array.length);
+        let aux = array[numero]; //Guardo el valor que voy a reemplazar
+        array[numero] = array[0]; // Modifico el valor y guardo la respuesta correcta
+        array[0] = aux; // Agrego el valor que habia reemplazado y lo guardo en el primer lugar
+        return array;
+    }
+
     const verificar = (resp) => {
         if(maximoPreguntas > 0){
             if(resp === respuestas_correctas[i]){
@@ -90,13 +93,15 @@ function Preguntas(){
             else{
                 respuesta_mal(respuestas_correctas[i]);
             }
-            let aux = i+1;
-            setMostrarRespuestas(respuestas[indice[aux]]);
-            setI(aux);
+            i = i+1;
+            let auxRespuestas = reordenarRespuestas(arrayRespuestas[i]);
+            setPregunta(arrayPreguntas[i]);
+            setRespuestas(auxRespuestas);
+
             maximoPreguntas--;
         }
         else{
-            if(resCorrectas >= 27){
+            if(resCorrectas >= 25){
                 felicitaciones();                
             }
             else{
@@ -109,12 +114,12 @@ function Preguntas(){
         <div>
             <div className="d-flex flex-column align-items-center">
                 <div style={{margin: "auto" }} className="d-flex justify-content-center">
-                    <span className="pregunta text-center" style={styleTittle}>{preguntas[myArray[i]]}</span>
+                    <span className="pregunta text-center" style={styleTittle}>{pregunta}</span>
                 </div>
                 <div className="row p-0 m-0">
                     <div style={{margin: "auto", width: "100%"}} className="d-flex justify-content-center col-12">
                         <div className="d-flex flex-column align-items-center">
-                            {mostrarRespuestas.map((elem, iterador)=>{ return( 
+                            {respuestas.map((elem, iterador)=>{ return( 
                                 <button key={iterador} onClick={()=>verificar(elem)} className="col-12 btn btn-primary m-1 border shadow-sm">{elem}</button>
                             )})}
                         </div>
