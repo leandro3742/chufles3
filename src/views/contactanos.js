@@ -148,15 +148,15 @@ export default function Contactanos() {
                 <span style={styleText} className="my-2">Informacion de contacto</span>
                 <div className="d-flex flex-column justify-content-center align-items-start">
                     <div className="d-flex justify-content-center align-items-center">
-                        <img src={phone} style={{width: tamanioImg}} />
+                        <img src={phone} style={{width: tamanioImg}} alt="" />
                         <span style={styleSubText}>099402315</span>
                     </div>
                     <div className="d-flex justify-content-center align-items-center my-2">
-                        <img src={imgEmail} style={{width: tamanioImg}} className="mr-2 "/>
+                        <img src={imgEmail} style={{width: tamanioImg}} alt="" className="mr-2"/>
                         <span style={styleSubText}>chufles212@gmail.com</span>
                     </div>
                     <div style={{margin: margen}}>
-                        <a target="_blank" href="https://api.whatsapp.com/send?phone=59899402315"><button className="mt-3 btn btn-lg btn-success mb-2" >Ir directo a WhatsApp</button></a>
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone=59899402315" rel="noreferrer"><button className="mt-3 btn btn-lg btn-success mb-2" >Ir directo a WhatsApp</button></a>
                     </div>
                 </div>
             </div>

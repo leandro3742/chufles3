@@ -66,7 +66,7 @@ function Navbar() {
     }
     return (
         <nav style={styleNavbar} className={"bg-dark shadow-lg navbar navbar-expand-lg navbar-light fixed-top" + padding}>
-            <Link className={"col-lg-8 col-12 my-3 d-flex "+ alinear} to="/"><img className="my-2" style={{width: '250px'}} src={logo} /></Link>
+            <Link className={"col-lg-6 col-12 my-3 d-flex "+ alinear} to="/"><img className="my-2" style={{width: '250px'}} src={logo} alt=""/></Link>
             <button style={{margin: "auto"}} className={"navbar-toggler "+ b} type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded={a} aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -85,6 +85,9 @@ function Navbar() {
                     </li>
                     <li style={{margin: "auto"}} className="nav-item">
                         <NavLink className="nav-link" to="/Examen">Examen</NavLink>
+                    </li>
+                    <li style={{margin: "auto"}} className="nav-item">
+                        <NavLink className="nav-link" to="/Material_teorico">Material Teórico</NavLink>
                     </li>
                 </ul>
             </div>

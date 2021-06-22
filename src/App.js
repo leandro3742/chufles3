@@ -6,6 +6,7 @@ import Inicio from './views/inicio';
 import QuienesSomos from './views/quienesSomos';
 import Contactanos from './views/contactanos';
 import Examen from "./views/Examen";
+import MaterialTeorico from './views/materialTeorico';
 
 // import MaterialTeorico from "./pages/MaterialTeorico"; 
 // import Requisitos from "./pages/Requisitos";
@@ -20,7 +21,7 @@ function App() {
             <Route path="/" exact component={Inicio} />
             <Route path="/Quienes_somos" exact component={QuienesSomos} />
             <Route path="/Contactanos" exact component={Contactanos} />            
-            {/* <Route path="/materialTeorico" exact component={MaterialTeorico} /> */}
+            <Route path="/Material_teorico" exact component={MaterialTeorico} />
             {/* <Route path="/requisitos" exact component={Requisitos} /> */}
             <Route path="/examen" exact component={Examen} />
           </Switch>
