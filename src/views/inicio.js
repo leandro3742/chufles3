@@ -4,6 +4,9 @@ import logo from '../img/grande(1).jpg';
 import logo2 from '../img/grande(2).jpg';
 import logo3 from '../img/grande(4).jpg';
 import Carrousel from '../components/Carrousel';
+import ventanilla from '../img/ventana.jpg';
+import barbijo from '../img/barbijo.jpg';
+import desinfeccion from '../img/desinfeccion.jpg';
 
 function Inicio() {
   const [tamanoTitulo, setTamanoTitulo] = useState('');
@@ -77,7 +80,7 @@ function Inicio() {
           <div style={{backgroundColor: '#C2C2C2'}} className="shadow p-3 rounded">
             <div className="row">
               <div className="col-lg-4 col-12 d-flex justify-content-center align-items-center">
-              <img src={logo} style={{height: tamanoImg}} className="rounded shadow-lg"/>
+              <img src={ventanilla} style={{height: tamanoImg}} className="rounded shadow-lg" alt=""/>
               </div>
               <div className="col-lg-5 col-12 text-center">
                 <span style={styleText}>Las ventanillas deberán estar siempre abiertas, para un mejor circulación de aire</span>          
@@ -91,7 +94,7 @@ function Inicio() {
                 <span style={styleText}>Desinfección del vehículo antes y después de cada clase</span>          
               </div>
               <div className="col-lg-4 col-12 d-flex justify-content-center align-items-center">
-                <img src={logo2} style={{height: tamanoImg}} className="rounded shadow-lg"/>
+                <img src={desinfeccion} style={{height: tamanoImg}} className="rounded shadow-lg" alt=""/>
               </div>
             </div>
           </div>
@@ -99,10 +102,10 @@ function Inicio() {
           <div style={{backgroundColor: '#C2C2C2'}} className="shadow p-3 rounded">
             <div className="row">
               <div className="col-lg-4 col-12 d-flex justify-content-center align-items-center">
-                <img src={logo3} style={{height: tamanoImg}} className="rounded shadow-lg"/>
+                <img src={barbijo} style={{height: tamanoImg}} className="rounded shadow-lg" alt=""/>
               </div>
               <div className="col-lg-5 col-12 text-center">
-                <span style={styleText}>Uso obligatorio del tapabocas para los alumnos y conductores</span>          
+                <span style={styleText}>Uso obligatorio del tapabocas para los alumnos e instructores</span>          
               </div>
             </div>
           </div>
