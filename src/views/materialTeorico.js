@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import  from 'react-router-dom'; 
-// import './styles/MaterialTeorico.css';
-// import Footer from '../components/Footer';
 import pdf from '../img/pdf.svg';
 
 export default function MaterialTeorico() {
