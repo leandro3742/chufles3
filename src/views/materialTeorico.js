@@ -35,7 +35,8 @@ export default function MaterialTeorico() {
     
     const styleSubText = {
         fontFamily: 'Changa, sans-serif',
-        fontSize: tamanoSubTexto
+        fontSize: tamanoSubTexto,
+        color: "#6E6E6E"
     }
     return(
         <div className="row p-0 m-0">

@@ -152,7 +152,7 @@ export default function Contactanos() {
               </div>
               <div className="d-flex justify-content-center align-items-center my-2">
                 <img src={imgEmail} style={{width: tamanioImg}} alt="" className="mr-2"/>
-                <span style={styleSubText}>chufles212@gmail.com</span>
+                <span style={styleSubText}>chufle212@gmail.com</span>
               </div>
                 <div style={{margin: margen}}>
                   <a target="_blank" href="https://api.whatsapp.com/send?phone=59899402315" rel="noreferrer"><button className="mt-3 btn btn-lg btn-success mb-2" >Ir directo a WhatsApp</button></a>

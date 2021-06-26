@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import Carrousel from '../components/Carrousel';
-
 export default function QuienesSomos() {
   const [tamanoTitulo, setTamanoTitulo] = useState('');
   const [tamanoTexto, setTamanoTexto] = useState('');
