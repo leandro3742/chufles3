@@ -30,7 +30,7 @@ function Preguntas(){
             icon: "success",            
             title: `!!Felicitaciones!!
                     Aprovaste el simulacro`,
-            text: 'Volver a intentarlo?',
+            text: '¡¡ Estoy ready 😁 !!',
             button: "success",
             padding: '3em',
         }).then((result)=>{
@@ -41,7 +41,7 @@ function Preguntas(){
         Swal.fire({
             icon: "error",
             title: "Ops...",
-            text: "no llegaste al minimo necesario para salvar el simulacro",
+            text: 'no llegaste al minimo necesario para salvar el simulacro',
             showConfirmButton: true,
             showCancelButton: true,
             confirmButtonText: `volver a intentar`,

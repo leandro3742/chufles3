@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Preguntas from '../components/Preguntas';
 import Swal from 'sweetalert2';
 
@@ -30,21 +30,17 @@ const arreglo = [Maira, Leandro, Arihana, Sergio, Natalia, Yaquelin, Juan, Asley
 
 const Examen = () => {
 // Styles //
-    const [tamanoTitulo, setTamanoTitulo] = useState('');
+    // const [tamanoTitulo, setTamanoTitulo] = useState('');
     
-    useEffect(() => {
-      if(window.screen.width < 780){
-        setTamanoTitulo("32px");  
-      }
-      else{
-        setTamanoTitulo("52px");
-      }
-    }, []);
-  
-    const styleTittle = {
-      fontSize: tamanoTitulo,
-      fontFamily: 'Acme, sans-serif'
-    };
+    // useEffect(() => {
+    //   if(window.screen.width < 780){
+    //     setTamanoTitulo("32px");  
+    //   }
+    //   else{
+    //     setTamanoTitulo("52px");
+    //   }
+    // }, []);
+
 
 // Javascript //   
     const [mostrarLogin, setMostrarLogin] = useState("d-block");
