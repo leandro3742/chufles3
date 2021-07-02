@@ -127,8 +127,6 @@ function Preguntas(){
                 </div>
                 <span style={styleTittle}>{i+1}/30</span>
             </div>
-            <button onClick={()=>perdio()}>Probar</button>
-            <button onClick={()=>felicitaciones()}>Feliciar</button>
         </div>
     )
 }
