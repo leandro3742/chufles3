@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Preguntas from '../components/Preguntas';
 import Swal from 'sweetalert2';
+import { useEffect } from 'react';
 
 class USUARIO{
     constructor(CI, sexo, nombre){
@@ -16,23 +17,31 @@ const Leandro = new USUARIO(49189815, 'm', 'Leandro');
 const Arihana = new USUARIO(50379752, 'f', 'Arihana');
 
 const Maximiliano = new USUARIO(55748978, 'm', 'Maximiliano'); // Maximiliano Lucas ingresado: 2/7/21
-const arreglo = [Maira, Leandro, Arihana, Maximiliano];
+var arreglo = [Maira, Leandro, Arihana, Maximiliano];
 
 /*******************************************/
 
 const Examen = () => {
-// Styles //
-    // const [tamanoTitulo, setTamanoTitulo] = useState('');
-    
-    // useEffect(() => {
-    //   if(window.screen.width < 780){
-    //     setTamanoTitulo("32px");  
-    //   }
-    //   else{
-    //     setTamanoTitulo("52px");
-    //   }
-    // }, []);
 
+    const fetchTraerUsuarios = async () => {
+        console.log("URL",process.env.URL)
+        try {
+            var requestOptions = {
+                method: "GET",
+            };
+            console.log("URL",process.env.URL)
+            const res = await fetch(process.env.URL + "/user", requestOptions);
+            const data = await res.json();
+            arreglo = data;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(()=>{
+        fetchTraerUsuarios();
+        console.log(arreglo);
+    }, []);
 
 // Javascript //   
     const [mostrarLogin, setMostrarLogin] = useState("d-block");
