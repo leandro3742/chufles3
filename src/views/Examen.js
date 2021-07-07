@@ -17,7 +17,9 @@ const Leandro = new USUARIO(49189815, 'm', 'Leandro');
 const Arihana = new USUARIO(50379752, 'f', 'Arihana');
 
 const Maximiliano = new USUARIO(55748978, 'm', 'Maximiliano'); // Maximiliano Lucas ingresado: 2/7/21
-var arreglo = [Maira, Leandro, Arihana, Maximiliano];
+const Agustin = new USUARIO(53856070, 'm', 'Agustin'); // Agustin Zucoti ingresado: 7/7/21
+
+var arreglo = [Maira, Leandro, Arihana, Maximiliano, Agustin];
 
 /*******************************************/
 
