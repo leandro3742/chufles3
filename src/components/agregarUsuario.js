@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 
+import Spinner from '../components/spinner';
 import { Button } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 
@@ -9,16 +10,23 @@ export default function AgregarUsuario(){
     const [formulario, setFormulario] = useState("d-none");
     const [validated, setValidated] = useState(false);
 
+    const [spinner, setSpinner] = useState("");
+    const [opacidadListaUsuarios, setOpacidadListaUsuarios] = useState("100%");
+
     const traerUsuarios = async() => {
-            try {
-                const res = await fetch(process.env.REACT_APP_URL + "/user");
-                const data = await res.json();
-                console.log("data:",data);
-                setUsuarios(data);
-            } catch (error) {
-                console.log(error);
-                return "error";
-            }
+        setSpinner(<Spinner />);
+        setOpacidadListaUsuarios("75%");
+        try {
+            const res = await fetch(process.env.REACT_APP_URL + "/user");
+            const data = await res.json();
+            console.log("data:",data);
+            setUsuarios(data);
+            setSpinner("");
+            setOpacidadListaUsuarios("100%");
+        } catch (error) {
+            console.log(error);
+            return "error";
+        }
     };
 
     const eliminarUsuario = async(id) => {
@@ -122,7 +130,10 @@ export default function AgregarUsuario(){
         <div>
             <h2 className="text-center">Usuarios registrados:</h2>
             {/* <h4 className="text-center text-secondary mt-2" >No hay usuarios registrados</h4> */}
-            <div style={{ height: "150px", overflowY: "scroll", backgroundColor: "#FCAAAA" }} className="shadow-lg rounded">
+            <div style={{ height: "150px", overflowY: "scroll", backgroundColor: "#FCAAAA", opacity: opacidadListaUsuarios }} className="shadow-lg rounded">
+                <div id="spinner" style={{ position: "absolute", top: "55%", left:"45%", zIndex: "1"}}>
+                    {spinner}
+                </div>
                 <div className="row p-0 m-0">
                     <div className="col-5 p-0 m-0 text-center text-secondary"> <h6>Nombre</h6> </div>
                     <div className="col-3 p-0 m-0 text-center text-secondary"> <h6>Cedula</h6> </div>
@@ -133,17 +144,17 @@ export default function AgregarUsuario(){
                     for (let i = 5; i < 10; i++) {
                         fecha += elem.fechaIngreso.charAt(i);
                     }
-                    console.log(fecha);
-                    return(
-                        <div className="row p-0 m-0 my-1 d-flex align-items-center" key={iterator}> 
-                            <div className="col-5 p-0 m-0 text-center"> <h6 className="m-auto">{elem.first_name} {elem.last_name} </h6> </div>
-                            <div className="col-3 p-0 m-0 text-center "> <h6 className="m-auto">{elem.cedula}</h6> </div>
-                            <div className="col-3 p-0 m-0 text-center"> <h6 className="m-auto" >{fecha}</h6> </div>
+                    if(elem.rol === "Alumno"){                    
+                        return(
+                            <div className="row p-0 m-0 my-1 d-flex align-items-center" key={iterator}> 
+                                <div className="col-5 p-0 m-0 text-center"> <h6 className="m-auto">{elem.first_name} {elem.last_name} </h6> </div>
+                                <div className="col-3 p-0 m-0 text-center "> <h6 className="m-auto">{elem.cedula}</h6> </div>
+                                <div className="col-3 p-0 m-0 text-center"> <h6 className="m-auto" >{fecha}</h6> </div>
 
-                            <button onClick={()=>eliminarUsuario(elem.id)} className="col-1 p-0 btn btn-danger" style={{ height: "25px"}}>X</button>                        
-                        </div>
-
-                )})}
+                                <button onClick={()=>eliminarUsuario(elem.id)} className="col-1 p-0 btn btn-danger" style={{ height: "25px"}}>X</button>                        
+                            </div>)
+                    };
+                })}
             </div>
             <div className="d-flex justify-content-center mt-2">
                 <button onClick={()=> mostrarFormulario()} className="btn btn-primary">Agregar usuario</button>

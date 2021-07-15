@@ -1,42 +1,29 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
+import Swal from 'sweetalert2';
+
 import Preguntas from '../components/Preguntas';
 import AgregarUsuario from '../components/agregarUsuario';
+import Spinner from "../components/spinner";
 
-import Swal from 'sweetalert2';
-import { useEffect } from 'react';
 
-class USUARIO{
-    constructor(CI, sexo, nombre, rol){
-        this.CI = CI;
-        this.sexo = sexo;
-        this.nombre = nombre;
-        this.rol = rol;
-    }
-}
-/********CONSTANTES Y ARREGLOS **********/
-
-const Maira = new USUARIO(26372734, 'f', 'Maira', 'admin');
-const Leandro = new USUARIO(49189815, 'm', 'Leandro', 'admin');
-const Arihana = new USUARIO(50379752, 'f', 'Arihana', 'admin');
-
-const Maximiliano = new USUARIO(55748978, 'm', 'Maximiliano', 'alumno'); // Maximiliano Lucas ingresado: 2/7/21
-const Agustin = new USUARIO(53856070, 'm', 'Agustin', 'alumno'); // Agustin Zucoti ingresado: 7/7/21
-const LeandroToledo = new USUARIO(64230077, 'm', 'Leandro', 'alumno'); //Leandro Toledo ingresado: 9/7/21
-
-var arreglo = [Maira, Leandro, Arihana, Maximiliano, Agustin, LeandroToledo];
-// var admin = [Maira, Leandro, Arihana];
-/*******************************************/
+var usuario = {}; //Guardo la cedula y el nombre que ingresa el usuario
 
 const Examen = () => {
+    const [arreglo, setArreglo] = useState([]);
+    const [spinner, setSpinner] = useState("");
+    const [opacidadLogin, setOpacidadLogin] = useState("100%");
 
     const fetchTraerUsuarios = async () => {
-        console.log("URL",process.env.REACT_APP_URL)
+        setSpinner(<Spinner />);
+        setOpacidadLogin("75%");
         try {
-            // console.log("URL",process.env.URL)
             const res = await fetch(process.env.REACT_APP_URL + "/user");
             const data = await res.json();
-            console.log("data",data)
-            // arreglo = data;
+            setArreglo(data);
+            console.log(arreglo);
+            setSpinner("");
+            setOpacidadLogin("100%");
         } catch (error) {
             console.log(error);
         }
@@ -53,25 +40,34 @@ const Examen = () => {
 
     let existe = false; //Sirve para la funcion comprobar
     let welcome = '';
-    const comprobar = user =>{
+    const comprobar = () =>{
         let i = 0;
-        console.log(user)
+        console.log(usuario);
         for( i in arreglo){
-            if(arreglo[i].CI == user){
-                if(arreglo[i].rol === "admin"){ 
-                    setMostrar(<AgregarUsuario />);
-                    setMostrarLogin("d-none");
-                    setMostrarPreguntas("d-block");
+            if(arreglo[i].cedula == usuario.ci){
+                if(arreglo[i].rol === "Administrador"){ 
+                    if(usuario.nombre.toUpperCase() == arreglo[i].first_name.toUpperCase()){
+                        setMostrar(<AgregarUsuario />);
+                        setMostrarLogin("d-none");
+                        setMostrarPreguntas("d-block");
+                    }
+                    else{
+                        Swal.fire({
+                            title : "El nombre no coincide con la cedula", 
+                            buttons: "Ok",
+                            icon : "error"
+                        })
+                    }
                     existe = true;
                     break;
                 }
                 else{
-                    if(arreglo[i].sexo === 'f')
+                    if(arreglo[i].sexo === 'femenino')
                         welcome = "Bienvenida";
                     else
                         welcome = "Bienvenido";    
                     Swal.fire({
-                        text : welcome+" "+arreglo[i].nombre, 
+                        text : welcome+" "+usuario.nombre, 
                         buttons: "Comenzar ahora",
                         icon : "success"
                     })
@@ -97,12 +93,19 @@ const Examen = () => {
 
     const verify = e => {
         e.preventDefault();
-        console.log("llega");
-        comprobar(e.target.ci.value);
+        usuario = {
+            nombre: e.target.nombre.value,
+            ci: e.target.ci.value
+        }
+        // setUsuario(usuarioAux);
+        comprobar();
     }    
     return (
         <div style={{minHeight: "250px"}} >
-            <div className={mostrarLogin}>   
+            <div id="spinner" style={{ position: "absolute", top: "60%", left:"45%", zIndex: "1"}}>
+                {spinner}
+            </div>
+            <div className={mostrarLogin} style={{ opacity: opacidadLogin}}>   
                 <div className="container cuerpoInicio d-flex justify-content-center align-items-center mt-n4">
                     <div className="mt-5 container bg-white rounded cardInicio card shadow" style={{ width: "350px" }}>
                         <h3 className="text-center mt-4 mb-3">Iniciar sesión</h3>
