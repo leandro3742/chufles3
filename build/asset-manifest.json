@@ -1,25 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.38184e8e.chunk.css",
-    "main.js": "/static/js/main.79616203.chunk.js",
-    "main.js.map": "/static/js/main.79616203.chunk.js.map",
+    "main.js": "/static/js/main.f1139e2e.chunk.js",
+    "main.js.map": "/static/js/main.f1139e2e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ab06eb44.js",
     "runtime-main.js.map": "/static/js/runtime-main.ab06eb44.js.map",
-    "static/js/2.5cc88f03.chunk.js": "/static/js/2.5cc88f03.chunk.js",
-    "static/js/2.5cc88f03.chunk.js.map": "/static/js/2.5cc88f03.chunk.js.map",
+    "static/js/2.3d1c8445.chunk.js": "/static/js/2.3d1c8445.chunk.js",
+    "static/js/2.3d1c8445.chunk.js.map": "/static/js/2.3d1c8445.chunk.js.map",
     "static/js/3.8764d68e.chunk.js": "/static/js/3.8764d68e.chunk.js",
     "static/js/3.8764d68e.chunk.js.map": "/static/js/3.8764d68e.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.38184e8e.chunk.css.map": "/static/css/main.38184e8e.chunk.css.map",
-    "static/js/2.5cc88f03.chunk.js.LICENSE.txt": "/static/js/2.5cc88f03.chunk.js.LICENSE.txt",
+    "static/js/2.3d1c8445.chunk.js.LICENSE.txt": "/static/js/2.3d1c8445.chunk.js.LICENSE.txt",
     "static/media/Icon material-email.3ab2e15d.svg": "/static/media/Icon material-email.3ab2e15d.svg",
     "static/media/barbijo.e9f8e85d.jpg": "/static/media/barbijo.e9f8e85d.jpg",
+    "static/media/camion.6e5b4856.jpg": "/static/media/camion.6e5b4856.jpg",
     "static/media/desinfeccion.dbac6aa0.jpg": "/static/media/desinfeccion.dbac6aa0.jpg",
-    "static/media/grande(1).a7e0bbaa.jpg": "/static/media/grande(1).a7e0bbaa.jpg",
-    "static/media/grande(2).a7ad3212.jpg": "/static/media/grande(2).a7ad3212.jpg",
-    "static/media/grande(4).d64ef064.jpg": "/static/media/grande(4).d64ef064.jpg",
-    "static/media/grande(mercadopago).b574c341.jpg": "/static/media/grande(mercadopago).b574c341.jpg",
-    "static/media/grande(nuevo).05c8f2e0.jpg": "/static/media/grande(nuevo).05c8f2e0.jpg",
     "static/media/maps.73388b5b.svg": "/static/media/maps.73388b5b.svg",
     "static/media/pdf.02a2c2b1.svg": "/static/media/pdf.02a2c2b1.svg",
     "static/media/phone.510b20a3.svg": "/static/media/phone.510b20a3.svg",
@@ -27,8 +23,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ab06eb44.js",
-    "static/js/2.5cc88f03.chunk.js",
+    "static/js/2.3d1c8445.chunk.js",
     "static/css/main.38184e8e.chunk.css",
-    "static/js/main.79616203.chunk.js"
+    "static/js/main.f1139e2e.chunk.js"
   ]
 }

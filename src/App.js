@@ -8,10 +8,6 @@ import Contactanos from './views/contactanos';
 import Examen from "./views/Examen";
 import MaterialTeorico from './views/materialTeorico';
 
-// import MaterialTeorico from "./pages/MaterialTeorico"; 
-// import Requisitos from "./pages/Requisitos";
-// import Pruebas from "../pages/Pruebas";
-
 function App() {
   return (
     <div className="App">

@@ -1,41 +1,42 @@
 import React, { useState } from 'react';
 import Preguntas from '../components/Preguntas';
+import AgregarUsuario from '../components/agregarUsuario';
+
 import Swal from 'sweetalert2';
 import { useEffect } from 'react';
 
 class USUARIO{
-    constructor(CI, sexo, nombre){
+    constructor(CI, sexo, nombre, rol){
         this.CI = CI;
         this.sexo = sexo;
         this.nombre = nombre;
+        this.rol = rol;
     }
 }
 /********CONSTANTES Y ARREGLOS **********/
 
-const Maira = new USUARIO(26372734, 'f', 'Maira');
-const Leandro = new USUARIO(49189815, 'm', 'Leandro');
-const Arihana = new USUARIO(50379752, 'f', 'Arihana');
+const Maira = new USUARIO(26372734, 'f', 'Maira', 'admin');
+const Leandro = new USUARIO(49189815, 'm', 'Leandro', 'admin');
+const Arihana = new USUARIO(50379752, 'f', 'Arihana', 'admin');
 
-const Maximiliano = new USUARIO(55748978, 'm', 'Maximiliano'); // Maximiliano Lucas ingresado: 2/7/21
-const Agustin = new USUARIO(53856070, 'm', 'Agustin'); // Agustin Zucoti ingresado: 7/7/21
-const LeandroToledo = new USUARIO(64230077, 'm', 'Leandro'); //Leandro Toledo ingresado: 9/7/21
+const Maximiliano = new USUARIO(55748978, 'm', 'Maximiliano', 'alumno'); // Maximiliano Lucas ingresado: 2/7/21
+const Agustin = new USUARIO(53856070, 'm', 'Agustin', 'alumno'); // Agustin Zucoti ingresado: 7/7/21
+const LeandroToledo = new USUARIO(64230077, 'm', 'Leandro', 'alumno'); //Leandro Toledo ingresado: 9/7/21
 
 var arreglo = [Maira, Leandro, Arihana, Maximiliano, Agustin, LeandroToledo];
-
+// var admin = [Maira, Leandro, Arihana];
 /*******************************************/
 
 const Examen = () => {
 
     const fetchTraerUsuarios = async () => {
-        console.log("URL",process.env.URL)
+        console.log("URL",process.env.REACT_APP_URL)
         try {
-            var requestOptions = {
-                method: "GET",
-            };
-            console.log("URL",process.env.URL)
-            const res = await fetch(process.env.URL + "/user", requestOptions);
+            // console.log("URL",process.env.URL)
+            const res = await fetch(process.env.REACT_APP_URL + "/user");
             const data = await res.json();
-            arreglo = data;
+            console.log("data",data)
+            // arreglo = data;
         } catch (error) {
             console.log(error);
         }
@@ -43,37 +44,48 @@ const Examen = () => {
 
     useEffect(()=>{
         fetchTraerUsuarios();
-        console.log(arreglo);
     }, []);
 
 // Javascript //   
     const [mostrarLogin, setMostrarLogin] = useState("d-block");
     const [mostrarPreguntas, setMostrarPreguntas] = useState("d-none");
+    const [mostrar, setMostrar] = useState("");
+
     let existe = false; //Sirve para la funcion comprobar
     let welcome = '';
     const comprobar = user =>{
         let i = 0;
-        while(i < arreglo.length){
-            if(arreglo[i].CI != user)
-                i++;
-            else{
-                if(arreglo[i].sexo === 'f')
-                    welcome = "Bienvenida";
-                else
-                    welcome = "Bienvenido";
-    
-                Swal.fire({
-                    text : welcome+" "+arreglo[i].nombre, 
-                    buttons: "Comenzar ahora",
-                    icon : "success"
-                })
-                existe = true;
-                setMostrarLogin("d-none");
-                setMostrarPreguntas("d-block");
-                break;
+        console.log(user)
+        for( i in arreglo){
+            if(arreglo[i].CI == user){
+                if(arreglo[i].rol === "admin"){ 
+                    setMostrar(<AgregarUsuario />);
+                    setMostrarLogin("d-none");
+                    setMostrarPreguntas("d-block");
+                    existe = true;
+                    break;
+                }
+                else{
+                    if(arreglo[i].sexo === 'f')
+                        welcome = "Bienvenida";
+                    else
+                        welcome = "Bienvenido";    
+                    Swal.fire({
+                        text : welcome+" "+arreglo[i].nombre, 
+                        buttons: "Comenzar ahora",
+                        icon : "success"
+                    })
+                    setMostrarLogin("d-none");
+                    setMostrarPreguntas("d-block");
+                    setMostrar(<Preguntas />);
+                    setMostrarLogin("d-none");
+                    setMostrarPreguntas("d-block");
+                    existe = true;
+                    break;
+                }
             }
         }
-        if(existe === false){
+        if(!existe){
             Swal.fire({
                 title : "Ops... " ,
                 text : "Usuario no encontrado" ,
@@ -124,7 +136,7 @@ const Examen = () => {
                 </div>
             </div>
             <div className={mostrarPreguntas}>
-                <Preguntas />
+                {mostrar}
             </div>
         </div>
     )

@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
-import logo from '../img/grande(1).jpg';
-import logo2 from '../img/grande(2).jpg';
-import logo3 from '../img/grande(4).jpg';
-import Carrousel from '../components/Carrousel';
 import ventanilla from '../img/ventana.jpg';
 import barbijo from '../img/barbijo.jpg';
 import desinfeccion from '../img/desinfeccion.jpg';
 
+import camion from '../img/camion.jpg';
+
 function Inicio() {
   const [tamanoTitulo, setTamanoTitulo] = useState('');
+  const [tamanoVehiculos, setTamanoVehiculo] = useState("300px");
   const [tamanoTexto, setTamanoTexto] = useState('');
   const [tamanoSubTexto, setTamanoSubTexto] = useState('');
   const [containerResponsive, setContainerResponsive] = useState("");
@@ -23,6 +22,8 @@ function Inicio() {
       setContainerResponsive("200px");
       setTamanoImg("100px");
       setMarginBottom("mb-2");
+      //Vehiculo
+      setTamanoVehiculo("200px");
     }
     else{
       setTamanoTitulo("52px");
@@ -31,6 +32,8 @@ function Inicio() {
       setContainerResponsive("175px");
       setTamanoImg("150px");
       setMarginBottom("mb-5");
+      //Vehiculo
+      setTamanoVehiculo("450px")
     }
   }, []);
 
@@ -62,14 +65,11 @@ function Inicio() {
     fontFamily: 'Changa, sans-serif',
     fontSize: tamanoSubTexto
   }
+
 // Fin styles //
 
   return (
     <div>
-      {/* <div className="mb-5">
-      <Carrousel />
-      </div> */}
-      
       <div className="d-flex justify-content-center mt-5">
         <div className="col-12 col-lg-10">
           <div style={covid} className={"d-flex justify-content-center shadow p-3 rounded text-center "+ marginBottom}>
@@ -131,7 +131,22 @@ function Inicio() {
             <span style={styleSubText}>Expertos en manejo, que podrán resolver tus dudas al instante</span>
           </div>
         </div>
-      </div>  
+      </div>
+
+      {/* <div style={{ backgroundColor: '#C2C2C2', marginTop: "50px"}} className="shadow-lg col-12 text-center py-4">
+        <div className="d-flex justify-content-center">
+          <span style={styleTittle}>Nuestra flota</span>
+        </div>
+        <div className="row">
+          <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">
+            <img src={camion} style={{width: tamanoVehiculos}} className="rounded shadow-lg mt-2" alt=""/>
+          </div>
+          <div className="col-lg-6 col-12 d-flex justify-content-center align-items-center">
+            <img src={camion} style={{width: tamanoVehiculos}} className="rounded shadow-lg mt-2" alt=""/>
+          </div>
+        </div>
+      </div> */}
+
     </div>
   );
 }
