@@ -102,7 +102,7 @@ const Examen = () => {
     }    
     return (
         <div style={{minHeight: "250px"}} >
-            <div id="spinner" style={{ position: "absolute", top: "60%", left:"45%", zIndex: "1"}}>
+            <div id="spinner" style={{ position: "absolute", top: "45%", left:"45%", zIndex: "1"}}>
                 {spinner}
             </div>
             <div className={mostrarLogin} style={{ opacity: opacidadLogin}}>   

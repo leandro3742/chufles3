@@ -117,11 +117,11 @@ export default function AgregarUsuario(){
             event.preventDefault(); // hace que no se recargue la pagina
             agregarUsuario(form.nombre.value, form.apellido.value, form.cedula.value, form.sexo.value, form.rol.value);
             setFormulario("d-none");
-            form.nombre.value = undefined;
-            form.apellido.value = undefined;
-            form.cedula.value = undefined;
-            form.sexo.value = undefined;
-            form.rol.value = undefined;
+            form.nombre.placeholder = "Nombre";
+            form.apellido.placeholder = "Apellido";
+            form.cedula.placeholder = "Cedula";
+            form.sexo.placeholder = "Sexo";
+            form.rol.placeholder = "Rol";
         }
 		setValidated(true);
 	};
@@ -131,7 +131,7 @@ export default function AgregarUsuario(){
             <h2 className="text-center">Usuarios registrados:</h2>
             {/* <h4 className="text-center text-secondary mt-2" >No hay usuarios registrados</h4> */}
             <div style={{ height: "150px", overflowY: "scroll", backgroundColor: "#FCAAAA", opacity: opacidadListaUsuarios }} className="shadow-lg rounded">
-                <div id="spinner" style={{ position: "absolute", top: "55%", left:"45%", zIndex: "1"}}>
+                <div id="spinner" style={{ position: "relative", top: "45%", left:"45%", zIndex: "1"}}>
                     {spinner}
                 </div>
                 <div className="row p-0 m-0">
