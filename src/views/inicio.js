@@ -7,6 +7,7 @@ import desinfeccion from '../img/desinfeccion.jpg';
 import camion from '../img/camion.jpg';
 
 function Inicio() {
+
   const [tamanoTitulo, setTamanoTitulo] = useState('');
   const [tamanoVehiculos, setTamanoVehiculo] = useState("300px");
   const [tamanoTexto, setTamanoTexto] = useState('');
@@ -36,7 +37,24 @@ function Inicio() {
       setTamanoVehiculo("450px")
     }
   }, []);
+  function fillSummaries(stringArray){
+    let arr = [] 
+    for(let i in stringArray){
+      let result;
+      if(stringArray[i].message.length <= 60){
+        result = {message: stringArray[i].message, id: stringArray[i].id, trimmed: stringArray[i].message}
+      }
+      else{
+        result = {message: stringArray[i].message, id: stringArray[i].id, trimmed: stringArray[i].message.substring(0, 60)}
+      }
+      arr.push(result);
+    }
+    console.log(arr)
+    return(arr)
+  }
 
+  useEffect(() => {
+    fillSummaries([{message: 'Short and brief message', id:1}, {message: 'A very very long message that is way above 80 characters and should be leftout.', id:2},])  }, [])
 // Styles //
   const covid = {
     backgroundColor: '#FCAAAA',

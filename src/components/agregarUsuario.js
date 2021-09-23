@@ -134,27 +134,34 @@ export default function AgregarUsuario(){
                 <div id="spinner" style={{ position: "relative", top: "45%", left:"45%", zIndex: "1"}}>
                     {spinner}
                 </div>
-                <div className="row p-0 m-0">
-                    <div className="col-5 p-0 m-0 text-center text-secondary"> <h6>Nombre</h6> </div>
-                    <div className="col-3 p-0 m-0 text-center text-secondary"> <h6>Cedula</h6> </div>
-                    <div className="col-3 p-0 m-0 text-center text-secondary"> <h6>Ingreso</h6> </div>
-                </div>
-                {usuarios.map((elem, iterator)=>{ 
-                    let fecha = "";
-                    for (let i = 5; i < 10; i++) {
-                        fecha += elem.fechaIngreso.charAt(i);
-                    }
-                    if(elem.rol === "Alumno"){                    
-                        return(
-                            <div className="row p-0 m-0 my-1 d-flex align-items-center" key={iterator}> 
-                                <div className="col-5 p-0 m-0 text-center"> <h6 className="m-auto">{elem.first_name} {elem.last_name} </h6> </div>
-                                <div className="col-3 p-0 m-0 text-center "> <h6 className="m-auto">{elem.cedula}</h6> </div>
-                                <div className="col-3 p-0 m-0 text-center"> <h6 className="m-auto" >{fecha}</h6> </div>
-
-                                <button onClick={()=>eliminarUsuario(elem.id)} className="col-1 p-0 btn btn-danger" style={{ height: "25px"}}>X</button>                        
-                            </div>)
-                    };
-                })}
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" className="m-0">Nombre</th>
+                            <th scope="col" className="m-0">Apellido</th>
+                            <th scope="col" className="m-0">Cedula</th>
+                            <th scope="col" className="m-0">Fecha</th>
+                            <th scope="col" className="m-0">Eliminar</th>
+                        </tr>
+                        {usuarios.map((elem, iterator)=>{ 
+                            let fecha = "";
+                            for (let i = 5; i < 10; i++) {
+                                fecha += elem.fechaIngreso.charAt(i);
+                            }
+                            if(elem.rol === "Alumno"){  
+                                return(
+                                    <tr key={iterator}>
+                                        <td>{elem.first_name}</td>
+                                        <td>{elem.last_name}</td>
+                                        <td>{elem.cedula}</td>
+                                        <td>{fecha}</td>
+                                        <td><button onClick={()=>eliminarUsuario(elem.id)} className="btn btn-danger">X</button></td>
+                                    </tr>
+                                )
+                            };
+                        })}
+                    </thead>
+                </table>
             </div>
             <div className="d-flex justify-content-center mt-2">
                 <button onClick={()=> mostrarFormulario()} className="btn btn-primary">Agregar usuario</button>
