@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.38184e8e.chunk.css",
-    "main.js": "/static/js/main.cf1373c5.chunk.js",
-    "main.js.map": "/static/js/main.cf1373c5.chunk.js.map",
+    "main.js": "/static/js/main.72f89213.chunk.js",
+    "main.js.map": "/static/js/main.72f89213.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.de2400ea.js",
     "runtime-main.js.map": "/static/js/runtime-main.de2400ea.js.map",
     "static/js/2.c12d1f2e.chunk.js": "/static/js/2.c12d1f2e.chunk.js",
@@ -13,18 +13,20 @@
     "static/css/main.38184e8e.chunk.css.map": "/static/css/main.38184e8e.chunk.css.map",
     "static/js/2.c12d1f2e.chunk.js.LICENSE.txt": "/static/js/2.c12d1f2e.chunk.js.LICENSE.txt",
     "static/media/Icon material-email.3ab2e15d.svg": "/static/media/Icon material-email.3ab2e15d.svg",
+    "static/media/ManualProfesional.41e34d28.pdf": "/static/media/ManualProfesional.41e34d28.pdf",
     "static/media/barbijo.e9f8e85d.jpg": "/static/media/barbijo.e9f8e85d.jpg",
     "static/media/camion.6e5b4856.jpg": "/static/media/camion.6e5b4856.jpg",
     "static/media/desinfeccion.dbac6aa0.jpg": "/static/media/desinfeccion.dbac6aa0.jpg",
     "static/media/maps.73388b5b.svg": "/static/media/maps.73388b5b.svg",
     "static/media/pdf.02a2c2b1.svg": "/static/media/pdf.02a2c2b1.svg",
     "static/media/phone.510b20a3.svg": "/static/media/phone.510b20a3.svg",
+    "static/media/teoricoAutosYMotos.21134ab5.pdf": "/static/media/teoricoAutosYMotos.21134ab5.pdf",
     "static/media/ventana.04c1b9d7.jpg": "/static/media/ventana.04c1b9d7.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.de2400ea.js",
     "static/js/2.c12d1f2e.chunk.js",
     "static/css/main.38184e8e.chunk.css",
-    "static/js/main.cf1373c5.chunk.js"
+    "static/js/main.72f89213.chunk.js"
   ]
 }

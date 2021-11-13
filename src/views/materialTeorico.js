@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import pdf from '../img/pdf.svg';
+import pdfProfesional from '../img/ManualProfesional.pdf';
+import pdfAutosYMotos from '../img/teoricoAutosYMotos.pdf';
 
 export default function MaterialTeorico() {
     const [tamanoTitulo, setTamanoTitulo] = useState('');
@@ -49,11 +51,11 @@ export default function MaterialTeorico() {
                 <div className="mt-4 row">
                     <div className="col-6 pdf d-flex flex-column align-items-center">
                         <img style={{ filter: 'drop-shadow(0 1px 1px rgba(0, 0, 0, 0.7))' }} alt="" src={pdf} />
-                        <a href="https://76cbc9e5-db41-4cdd-97e0-0b11e50391a3.filesusr.com/ugd/6c62a1_84c6b7015508415092af8098c5b4cc12.pdf" className="text-center" style={styleSubText}>Teorico autos y motos</a>
+                        <a href={pdfAutosYMotos} className="text-center" style={styleSubText}>Teorico autos y motos</a>
                     </div>
                     <div className="col-6 pdf d-flex flex-column align-items-center">
                         <img style={{ filter: 'drop-shadow(0 1px 1px rgba(0, 0, 0, 0.7))' }} alt="" src={pdf} />
-                        <a href="http://www.imcanelones.gub.uy/sites/all/themes/imc/archivos/ManualProfesional.pdf" className="text-center" style={styleSubText}>Teorico de licencia profesional</a>
+                        <a href={pdfProfesional} className="text-center" style={styleSubText}>Teorico de licencia profesional</a>
                     </div>
                 </div>
             </div>
