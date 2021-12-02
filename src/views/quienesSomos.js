@@ -30,12 +30,12 @@ export default function QuienesSomos() {
 
   
   return (
-    <div>
+    <div className="row p-0 m-0 d-flex justify-content-center">
       {/* <div className="mb-2 mt-1">
         <Carrousel />
       </div> */}
       
-      <div style={{backgroundColor: "#FCAAAA"}} className="mx-2 mt-5 shadow py-3 rounded d-flex flex-column align-items-center">
+      <div style={{backgroundColor: "#FCAAAA"}} className="mx-2 mt-5 shadow py-3 col-lg-10 col-md-10 col-12 rounded d-flex flex-column align-items-center">
         <span style={styleTittle}>¿Quiénes somos?</span>
         <span style={styleText} >Chufle's es una escuela de choferes con 27 años de enseñanza.
         Contamos con vehículos con toda la garantí y de ultima generación.
@@ -44,7 +44,7 @@ export default function QuienesSomos() {
         </span>
       </div>
 
-      <div style={{backgroundColor: "#C2C2C2"}} className="m-2 shadow py-3 rounded d-flex flex-column align-items-center">
+      <div style={{backgroundColor: "#C2C2C2"}} className="m-2 mt-lg-3 shadow py-3 col-lg-10 col-md-10 col-12 rounded d-flex flex-column align-items-center">
         <span style={styleTittle} className="text-white">Nuestra meta</span>
         <span style={styleText}>La meta es formar un conductor seguro y responsable de las 
         decisiones que  tendrá que tomar, con un buen conocimiento del vehículo y lo mismo en cuanto a 
@@ -52,7 +52,7 @@ export default function QuienesSomos() {
         </span>
       </div>
 
-      <div style={{backgroundColor: "#FCAAAA"}} className="mx-2 shadow py-3 rounded d-flex flex-column align-items-center">
+      <div style={{backgroundColor: "#FCAAAA"}} className="mx-2 mt-lg-3 shadow py-3 col-lg-10 col-md-10 col-12 rounded d-flex flex-column align-items-center">
         <span style={styleTittle}>Contamos con:</span>
         <ul>
           <li style={styleText}>Prácticas (Auto - Moto)</li>
