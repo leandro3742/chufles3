@@ -71,8 +71,6 @@ export default function AgregarUsuario(){
             rol: rol 
         });
 
-        console.log(raw);
-
         var requestOptions = {
             method: "POST",
             headers: myHeaders,

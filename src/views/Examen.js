@@ -13,6 +13,7 @@ const Examen = () => {
     const [arreglo, setArreglo] = useState([]);
     const [spinner, setSpinner] = useState("");
     const [opacidadLogin, setOpacidadLogin] = useState("100%");
+    const [styleSpinner, setStyleSpinner] = useState({});
 
     const fetchTraerUsuarios = async () => {
         setSpinner(<Spinner />);
@@ -44,7 +45,7 @@ const Examen = () => {
         let i = 0;
         console.log(usuario);
         for( i in arreglo){
-            if(arreglo[i].cedula == usuario.ci){
+            if(arreglo[i].cedula === usuario.ci){
                 if(arreglo[i].rol === "Administrador"){ 
                     if(usuario.nombre.toUpperCase() == arreglo[i].first_name.toUpperCase()){
                         setMostrar(<AgregarUsuario />);
@@ -99,17 +100,24 @@ const Examen = () => {
         }
         // setUsuario(usuarioAux);
         comprobar();
-    }    
+    }   
+    useEffect(() => {
+        if(window.screen.width < 780){
+            setStyleSpinner({position: "absolute", top: "55%", left:"45%", zIndex: "1"})
+        }
+        else{
+            setStyleSpinner({position: "absolute", top: "44%", left:"49%", zIndex: "1"})
+        }
+    }, []) 
     return (
         <div style={{minHeight: "250px"}} >
-            <div id="spinner" style={{ position: "absolute", top: "45%", left:"45%", zIndex: "1"}}>
+            <div id="spinner" style={styleSpinner}>
                 {spinner}
             </div>
-            <div className={mostrarLogin} style={{ opacity: opacidadLogin}}>   
+                <div className={mostrarLogin} style={{ opacity: opacidadLogin}}>   
                 <div className="container cuerpoInicio d-flex justify-content-center align-items-center mt-n4">
                     <div className="mt-5 container bg-white rounded cardInicio card shadow" style={{ width: "350px" }}>
                         <h3 className="text-center mt-4 mb-3">Iniciar sesión</h3>
-                        
                         <form onSubmit={verify}>
                             <div className="form-group">
                                 <input
