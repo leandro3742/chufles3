@@ -8,6 +8,7 @@ import Contactanos from './views/contactanos';
 import Examen from "./views/Examen";
 import MaterialTeorico from './views/materialTeorico';
 import Calendario from './views/calendario'
+import Admin from './views/admin';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
             {/* <Route path="/requisitos" exact component={Requisitos} /> */}
             <Route path="/examen" exact component={Examen} />
             <Route path="/calendario" exact component={Calendario} />
+            <Route path="/admin" exact component={Admin} />
           </Switch>
         </Layout>
       </BrowserRouter>
