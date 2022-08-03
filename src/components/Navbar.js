@@ -65,6 +65,12 @@ function Navbar() {
                     <li style={{margin: "auto"}} className="nav-item">
                         <NavLink className="nav-link" to="/Contactanos" data-toggle={toggle} data-target={target} aria-expanded={expanded}>Contáctanos</NavLink>
                     </li>
+                    <li style={{margin: "auto"}} className="nav-item">
+                        <NavLink className="nav-link" to="/Agenda" data-toggle={toggle} data-target={target} aria-expanded={expanded}>Agenda</NavLink>
+                    </li>
+                    <li style={{margin: "auto"}} className="nav-item">
+                        <NavLink className="nav-link" to="/admin" data-toggle={toggle} data-target={target} aria-expanded={expanded}>Admin</NavLink>
+                    </li>
                 </ul>
             </div>
         </nav>
