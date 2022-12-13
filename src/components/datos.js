@@ -279,7 +279,7 @@ export const respuestas = [
     ["Falso", "Verdadero"],
     ["Falso", "Verdadero"],
     ["Si", "No"],
-    ["Verdadero", "Falso"], 
+    ["Falso", "Verdadero"], 
     ["Verdadero", "Falso"],
     ["No pasar el eje de la calzada, demarcado o imaginario", "Encender las luces bajas", "Hacer un destello con las luces y acercarse lo más posible a la derecha", "Circular por el eje de la calzada, demarcado o imaginario"],
     ["Verdadero", "Falso"],
